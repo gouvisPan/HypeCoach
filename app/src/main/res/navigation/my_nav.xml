@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/mainScreenFragment">
+
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.MainScreenFragment"
+        android:label="mainScreenFragment" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_weeklyProgramFragment"
+            app:destination="@id/weeklyProgramFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_createProgramFragment"
+            app:destination="@id/createProgramFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_weightLogFragment"
+            app:destination="@id/weightLogFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_macrosFragment"
+            app:destination="@id/macrosFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_disruptionInputFragment"
+            app:destination="@id/disruptionInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weeklyProgramFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.WeeklyProgram.WeeklyProgramFragment"
+        android:label="fragment_weekly_program"
+        tools:layout="@layout/fragment_weekly_program" >
+        <action
+            android:id="@+id/actionGoToSession"
+            app:destination="@id/workingOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workingOutFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.WorkingOut.WorkingOutFragment"
+        android:label="fragment_working_out"
+        tools:layout="@layout/fragment_working_out" >
+        <argument
+            android:name="sessionId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/actionGoToInput"
+            app:destination="@id/challengeInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProgramFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.CreateProgram.CreateProgramFragment"
+        android:label="fragment_create_program"
+        tools:layout="@layout/fragment_create_program" >
+        <action
+            android:id="@+id/action_createProgramFragment_to_mainScreenFragment2"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.Profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/weightLogFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.WeightLog.WeightLogFragment"
+        android:label="fragment_weight_log"
+        tools:layout="@layout/fragment_weight_log" />
+    <fragment
+        android:id="@+id/challengeInputFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.ChallengeAndPumpInput.ChallengeInputFragment"
+        android:label="fragment_chalenge_input"
+        tools:layout="@layout/fragment_chalenge_input" >
+        <argument
+            android:name="sessionId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_challengeInputFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/macrosFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.Macros.MacrosFragment"
+        android:label="fragment_macros"
+        tools:layout="@layout/fragment_macros" />
+    <fragment
+        android:id="@+id/disruptionInputFragment"
+        android:name="com.example.hypecoachclean.presentation.Main.DIsruptionInput.DisruptionInputFragment"
+        android:label="fragment_disruption_input"
+        tools:layout="@layout/fragment_disruption_input" >
+        <action
+            android:id="@+id/action_disruptionInputFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+</navigation>

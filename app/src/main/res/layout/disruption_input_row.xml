@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="7dp"
+    android:layout_marginBottom="7dp"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp">
+
+    <TextView
+        android:id="@+id/tv_disruption_row_muscleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="MuscleName"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:textSize="@dimen/main_text_size"
+        />
+    <SeekBar
+        android:id="@+id/sb_disruption_row_disruption_value"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:max="3"
+        />
+
+</LinearLayout>

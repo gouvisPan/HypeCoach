@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">HypeCoachCLEAN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="name">Full name</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="age">Age</string>
+    <string name="submit">add</string>
+    <string name="let_s_get_started_text">Let\'s get started</string>
+    <string name="intro_text_description">Sign in if you already have an account or sign up if you are new here!</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="app_name_loading">HYPECOACH</string>
+    <string name="sign_up_hint">Fill your personal information to register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">REGISTER</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_in_hint">Please fill your credentials to log in</string>
+    <string name="just_a_sec">Just a sec</string>
+    <string name="reclick_to_exit">Re-click back to exit</string>
+    <string name="My_profile">My profile</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="My_weight_log">Weight Log</string>
+    <string name="My_1RM">1RM Calculator</string>
+    <string name="settings">Settings</string>
+    <string name="muscle_disruption">Muscle Disruption</string>
+    <string name="My_Macros">Macronutrients</string>
+    <string name="Adherence_hint">
+        You have to earn the ability of updating your diet guidelines! Earn all 100 weekly adherence points in order to unlock it...
+    </string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="switch_to_register">If you don\'t have an account, click here to create one!</string>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <TextView
+      android:id="@+id/tv_main_logo"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:textColor="@color/colorGreyDark"
+       app:layout_constraintTop_toTopOf="parent"
+       android:text="HYPECOACH"
+       android:textAlignment="center"
+       android:textSize="@dimen/logo_text_size"
+       android:layout_marginTop="75dp"
+       android:layout_marginEnd="@dimen/main_margin_start_end"
+       android:layout_marginStart="@dimen/main_margin_start_end"/>
+
+   <ImageView
+       android:id="@+id/main_logo_img"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:adjustViewBounds="true"
+       android:maxWidth="300dp"
+       android:maxHeight="300dp"
+       android:scaleType="fitCenter"
+       android:src="@drawable/ic_flexing_intro"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/tv_main_logo" />
+
+   <TextView
+       android:id="@+id/tv_adherencePoints"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
+       app:layout_constraintTop_toBottomOf="@id/main_logo_img"
+       android:textColor="@color/colorGreyDark"
+       android:gravity="center"
+       android:text="Adherence points: 0/100"/>
+
+   <Button
+       android:id="@+id/btn_workouts"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="@dimen/main_margin_start_end"
+       android:layout_marginRight="@dimen/main_margin_start_end"
+       android:layout_marginBottom="@dimen/main_margin_start_end"
+       android:text="Weekly Program"
+       android:background="@drawable/btn_intent_bg"
+       android:textColor="@color/white_color"
+       app:layout_constraintBottom_toTopOf="@id/btn_create_workout"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
+
+   <Button
+       android:id="@+id/btn_create_workout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="@dimen/button_side_margin"
+       android:layout_marginRight="@dimen/button_side_margin"
+       android:layout_marginBottom="@dimen/marginButtonBottom"
+       android:background="@drawable/btn_intent_bg"
+       android:text="Create Program"
+       android:textColor="@color/white_color"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

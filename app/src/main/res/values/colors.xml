@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0C90F1</color>
+    <color name="colorPrimaryDark">#2a4d69</color>
+    <color name="colorAccent">#adcbe3</color>
+    <color name="colorGreyish">#CCBBBB</color>
+    <color name="colorBlackLight">#220002</color>
+    <color name="toolbar_control_normal">#0C90F1</color>
+    <color name="colorBlackText">#222211</color>
+    <color name="colorDarkRed">#441111</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text_color">#9AA2AF</color>
+    <color name="white_color">#EEEEEE</color>
+    <color name="button_background_color">#63ace5</color>
+    <color name="snackBar_error_color">#FF4444</color>
+    <color name="colorGreyDark">#444444</color>teal_200
+    <color name="teal_200">#444444</color>
+    <color name="purple_700">#FF00FF</color>
+    <color name="purple_200">#DDA0DD</color>
+    <color name="black">#000000</color>
+
+</resources>

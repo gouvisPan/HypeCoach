@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_menu_my_profile"
+            android:icon="@drawable/ic_navigation_profile"
+            android:title="@string/My_profile"/>
+        <item
+            android:id="@+id/nav_menu_weight_log"
+            android:icon="@drawable/ic_navigation_weight"
+            android:title="@string/My_weight_log"/>
+        <item
+            android:id="@+id/nav_menu_disruption"
+            android:icon="@drawable/ic_navigation_disruption_24"
+            android:title="@string/muscle_disruption"/>
+        <item
+            android:id="@+id/nav_menu_my_Macros"
+            android:icon="@drawable/ic_navigation_1rm"
+            android:title="@string/My_Macros"/>
+        <item
+            android:id="@+id/nav_menu_settings"
+            android:icon="@drawable/ic_navigation_settings"
+            android:title="@string/settings"/>
+
+        <item
+            android:id="@+id/nav_menu_sign_out"
+            android:icon="@drawable/ic_navigation_sign_out"
+            android:title="@string/sign_out"/>
+    </group>
+</menu>

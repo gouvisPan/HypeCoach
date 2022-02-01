@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    tools:context=".presentation.Main.CreateProgram.CreateProgramFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/infoTvLeftMargin"
+            android:text="Days of Exercise:" />
+
+        <RadioGroup
+            android:id="@+id/rg_workouts_per_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="3dp"
+            android:checkedButton="@+id/rb_Beginner"
+
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_4Days"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:buttonTint="#1A99C4"
+                android:text="4" />
+
+            <RadioButton
+                android:id="@+id/rb_5Days"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:buttonTint="#1A99C4"
+                android:checked="true"
+                android:text="5" />
+
+            <RadioButton
+                android:id="@+id/rb_6Days"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:buttonTint="#1A99C4"
+                android:text="6" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Primary Focus" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="3dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rbFocusChest"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A99C4"
+                        android:text="Chest" />
+
+                    <RadioButton
+                        android:id="@+id/rbFocusBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A99C4"
+                        android:text="Back" />
+
+                    <RadioButton
+                        android:id="@+id/rbFocusLegs"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A99C4"
+                        android:checked="true"
+                        android:text="Legs" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Secondary Focus" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="3dp"
+                    android:orientation="vertical">
+
+
+                    <RadioButton
+                        android:id="@+id/rbFocusTriceps"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A99C4"
+                        android:checked="true"
+                        android:text="Triceps" />
+
+                    <RadioButton
+                        android:id="@+id/rbFocusBiceps"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A99C4"
+                        android:text="Biceps" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbFocusDelts"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A99C4"
+                        android:text="Delts" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/infoTvLeftMargin"
+            android:layout_marginTop="12dp"
+            android:text="Goal" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="3dp"
+            android:checkedButton="@+id/rb_Beginner"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_GainMuscle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:buttonTint="#1A99C4"
+                android:checked="true"
+                android:text="Gain muscle (Bulk)" />
+
+            <RadioButton
+                android:id="@+id/rb_MaintainMuscle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8.3dp"
+                android:layout_weight="1"
+                android:buttonTint="#1A99C4"
+                android:text="Maintain Muscle (Cut)" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/infoTvLeftMargin"
+            android:layout_marginTop="10dp"
+            android:text="Current volume (Sets per week)" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="30dp"
+                    android:text="Chest"
+                    android:textSize="@dimen/main_text_size" />
+
+                <EditText
+                    android:id="@+id/etChestVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/et_right_margin"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="13"
+                    android:textSize="@dimen/main_editText_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="30dp"
+                    android:text="Back"
+                    android:textSize="@dimen/main_text_size" />
+
+                <EditText
+                    android:id="@+id/etBackVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/et_right_margin"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="14"
+                    android:textSize="@dimen/main_editText_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="30dp"
+                    android:text="Triceps"
+                    android:textSize="@dimen/main_text_size" />
+
+                <EditText
+                    android:id="@+id/etTricepsVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/et_right_margin"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="6"
+                    android:textSize="@dimen/main_editText_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="30dp"
+                    android:text="Biceps"
+                    android:textSize="@dimen/main_text_size" />
+
+                <EditText
+                    android:id="@+id/etBicepsVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/et_right_margin"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="8"
+                    android:textSize="@dimen/main_editText_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="30dp"
+                    android:text="Quads"
+                    android:textSize="@dimen/main_text_size" />
+
+                <EditText
+                    android:id="@+id/etQuadsVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/et_right_margin"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="6"
+                    android:textSize="@dimen/main_editText_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="30dp"
+                    android:text="Hamstrings"
+                    android:textSize="@dimen/main_text_size" />
+
+                <EditText
+                    android:id="@+id/etHamstringsVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/et_right_margin"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="8"
+                    android:textSize="@dimen/main_editText_size" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGenerateMacroCycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:background="@drawable/btn_intent_bg"
+            android:text="Generate program" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loadingViewProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="4dp"
+      android:paddingTop="4dp">
+
+        <TextView
+            android:id="@+id/tvSetNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorBlackText"
+            android:text="SetNum"
+            android:textSize="@dimen/main_text_size"
+            android:paddingRight="10dp" />
+        <TextView
+            android:id="@+id/tvLoad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:textColor="@color/colorBlackText"
+            android:text="LoadAmm"
+            android:textSize="@dimen/main_text_size"/>
+        <TextView
+            android:id="@+id/tvRepNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorBlackText"
+            android:text="RepsCount"
+            android:gravity="left"
+            android:textSize="@dimen/main_text_size"/>
+        <TextView
+            android:id="@+id/tvRirNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlackText"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="theRir"
+            android:textSize="@dimen/main_text_size"/>
+
+
+</TableRow>

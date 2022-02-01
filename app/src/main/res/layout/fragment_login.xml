@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_signIn_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ToolbarTheme"
+        app:titleTextColor="#000000" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_signIn_activity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:gravity="center"
+            android:text="@string/sign_in_hint"
+            android:textColor="@color/colorGreyish"
+            android:textSize="@dimen/main_text_size" />
+
+
+        <EditText
+            android:id="@+id/et_user_email_signIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:hint="@string/email"
+            android:inputType="text"
+            android:textColor="@color/colorBlackText"
+            android:textColorHint="@color/colorGreyish" />
+
+        <EditText
+            android:id="@+id/et_user_password_signIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorBlackText"
+            android:textColorHint="@color/colorGreyish" />
+
+        <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:background="@drawable/shape_button_rounded"
+            android:text="@string/log_in"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/main_text_size" />
+
+        <TextView
+            android:id="@+id/tv_switch_to_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_side_margin"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="@dimen/button_side_margin"
+            android:gravity="center"
+            android:text="@string/switch_to_register"
+            android:textColor="@color/colorGreyish"
+            android:textSize="@dimen/small_text_size" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

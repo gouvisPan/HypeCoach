@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/challenge_pump_input_row.xml" value="0.22" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/current_set_table_row.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/disruption_input_row.xml" value="0.28940217391304346" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_chalenge_input.xml" value="0.25" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_create_program.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_disruption_input.xml" value="0.3242753623188406" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_macros.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_main_screen.xml" value="0.16145307769929365" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_register.xml" value="0.2821557971014493" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_weekly_program.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_weight_log.xml" value="0.22" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/fragment_working_out.xml" value="0.28940217391304346" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/item_weight_row.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/main_content.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/navigation_header.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/drawable/button_sub_round_corners.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/drawable/ic_actio_add_30secs.xml" value="0.1" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/activity_auth.xml" value="0.2328125" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/activity_dialog.xml" value="0.28072916666666664" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/activity_main.xml" value="0.2710215427380125" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/activity_sign_in.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/activity_sign_up.xml" value="0.28072916666666664" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/dialog_progress.xml" value="0.28072916666666664" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/disruption_input_row.xml" value="0.2558876811594203" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/fragment_create_program.xml" value="0.2453125" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/fragment_login.xml" value="0.2328125" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/fragment_main_screen.xml" value="0.1" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/fragment_register.xml" value="0.2328125" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/fragment_splash.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/fragment_weekly_program.xml" value="0.22" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/fragment_working_out.xml" value="0.18206521739130435" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/main_app_bar.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/main_content.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/navigation_header.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/session_table_row.xml" value="0.2558876811594203" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/set_table_row.xml" value="0.2640625" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/volume_info_content.xml" value="0.1765625" />
+        <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/menu/main_navigation_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

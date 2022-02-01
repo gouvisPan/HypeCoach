@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "334869155949",
+    "firebase_url": "https://hypecoach11-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "hypecoach11",
+    "storage_bucket": "hypecoach11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334869155949:android:5d06fc85cf2a4c2db76f64",
+        "android_client_info": {
+          "package_name": "com.example.hypecoach_v11"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334869155949-p1ucbemqafjlua1dkj0q179c78pf922e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXU3ZCXHg9J0ODk3Ikoq7sNlcUUyEdTk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334869155949-p1ucbemqafjlua1dkj0q179c78pf922e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334869155949:android:ed26af27de3f4a75b76f64",
+        "android_client_info": {
+          "package_name": "com.example.hypecoachclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334869155949-p1ucbemqafjlua1dkj0q179c78pf922e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXU3ZCXHg9J0ODk3Ikoq7sNlcUUyEdTk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334869155949-p1ucbemqafjlua1dkj0q179c78pf922e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
