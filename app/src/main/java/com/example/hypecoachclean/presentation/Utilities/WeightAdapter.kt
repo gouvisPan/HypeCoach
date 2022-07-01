@@ -1,12 +1,10 @@
 package com.example.hypecoachclean.presentation.Utilities
 
-import android.app.Activity
-import android.content.ClipData
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hypecoachclean.data.POJOs.Weight
+import com.example.hypecoachclean.data.BusinessLogic.Weight
 import com.example.hypecoachclean.databinding.ItemWeightRowBinding
 
 class WeightAdapter(
@@ -60,14 +58,13 @@ class WeightAdapter(
     }
 
     class ViewHolder(binding: ItemWeightRowBinding) : RecyclerView.ViewHolder(binding.root) {
-        val tvLogNum = binding.tvPosition
+
         val tvValue  = binding.tvWeight
         val tvDate   = binding.tvDate
         val llname = binding.llWeightItemName
 
         fun bind(weight: Weight,pos: Int){
 
-            tvLogNum.text= pos.toString()
             tvValue.text = weight.value.toString()
             tvDate.text  = weight.date
 

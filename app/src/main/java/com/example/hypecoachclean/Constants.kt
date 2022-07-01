@@ -1,6 +1,6 @@
 package com.example.hypecoachclean
 
-import com.example.hypecoachclean.data.POJOs.Exercise
+import com.example.hypecoachclean.data.BusinessLogic.Exercise
 
 class Constants {
 

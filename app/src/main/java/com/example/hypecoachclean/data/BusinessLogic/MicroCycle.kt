@@ -1,4 +1,4 @@
-package com.example.hypecoachclean.data.POJOs
+package com.example.hypecoachclean.data.BusinessLogic
 
 import com.example.hypecoachclean.Constants
 import java.io.Serializable
@@ -49,6 +49,7 @@ class MicroCycle(
 
         }
     }
+
     fun reAdjustVolumeForNextWeek(){
 
         for((j,i) in volumeAdjustment.withIndex()) {
@@ -173,6 +174,7 @@ class MicroCycle(
         }
     }
     fun generateCycle(){
+        adherencePoints = 0
 
         validateStartingVolume()
         if(gainMuscle) {

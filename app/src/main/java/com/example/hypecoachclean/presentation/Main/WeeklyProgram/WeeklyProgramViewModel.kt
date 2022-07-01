@@ -4,8 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.hypecoachclean.data.POJOs.ExerciseInSession
-import com.example.hypecoachclean.data.POJOs.MicroCycle
+import com.example.hypecoachclean.data.BusinessLogic.MicroCycle
 import com.example.hypecoachclean.repository.UserRepository
 import com.example.hypecoachclean.stringToObject
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +15,6 @@ class WeeklyProgramViewModel(context: Context): ViewModel() {
     private var  userRepository= UserRepository(context)
 
     val microL = MutableLiveData<MicroCycle>()
-
 
     fun getMicro(){
         viewModelScope.launch(Dispatchers.IO){

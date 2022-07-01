@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.hypecoachclean.R
 import com.example.hypecoachclean.databinding.FragmentProfileBinding
@@ -95,6 +96,7 @@ class ProfileFragment : BaseFragment<ProfileViewModel,FragmentProfileBinding>() 
         viewModel.savedL.observe(viewLifecycleOwner,Observer{
             if(it){
                 Toast.makeText(activity, "Profile Updated", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_profileFragment_to_mainScreenFragment)
             }
         })
 
@@ -137,9 +139,9 @@ class ProfileFragment : BaseFragment<ProfileViewModel,FragmentProfileBinding>() 
         val uAge =   binding.etProfileUserAge.text.toString()
         val uGender : String
 
-        if(binding.rbMale.isEnabled){
+        if(binding.rbMale.isChecked){
             uGender = "Male"
-        }else if(binding.rbFemale.isEnabled){
+        }else if(binding.rbFemale.isChecked){
             uGender = "Female"
         }else{
             uGender = "Other"

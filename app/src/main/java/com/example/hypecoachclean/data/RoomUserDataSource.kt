@@ -1,8 +1,7 @@
 package com.example.hypecoachclean.data
 
 import android.content.Context
-import com.example.hypecoachclean.data.POJOs.User
-import com.example.hypecoachclean.data.POJOs.DataSource
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.example.hypecoachclean.data.db.UserDatabase
 import com.example.hypecoachclean.data.db.UserEntity
 
@@ -16,4 +15,5 @@ class RoomUserDataSource(context: Context): DataSource {
     override suspend fun getUser() = userDao.getUserEntity().toUser()
 
     override suspend fun deleteAll() = userDao.deleteAll()
+
 }

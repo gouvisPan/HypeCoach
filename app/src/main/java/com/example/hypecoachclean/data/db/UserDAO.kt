@@ -1,8 +1,6 @@
 package com.example.hypecoachclean.data.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.hypecoachclean.data.POJOs.User
 
 @Dao
 interface UserDAO {

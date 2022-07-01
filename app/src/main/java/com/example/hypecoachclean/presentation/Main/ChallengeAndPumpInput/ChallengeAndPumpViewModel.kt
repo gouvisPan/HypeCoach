@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hypecoachclean.Constants
-import com.example.hypecoachclean.data.POJOs.User
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.example.hypecoachclean.objectToString
 import com.example.hypecoachclean.repository.UserRepository
 import com.example.hypecoachclean.stringToObject
@@ -28,20 +28,17 @@ class ChallengeAndPumpViewModel(context: Context): ViewModel() {
         currentSessionId = sessionId
         viewModelScope.launch(Dispatchers.IO){
             user = userRepository.getUser()
-
             val muscleInts = stringToObject(user.program).sessions[sessionId].volumeList
             val muscleStrings = ArrayList<String>()
 
             for((index,value) in muscleInts.withIndex()){
                 if(value != 0) muscleStrings.add(Constants.intToMuscle(index))
-
             }
             var sets = stringToObject(user.program).sessions[sessionId].exercises[1].getSets()
-            println("The load:" + sets[0].load)
             usedMusclesL.postValue(muscleStrings)
-
         }
     }
+
     fun convertToVolume(volumeArray: ArrayList<Int>){
         val muscleInts = stringToObject(user.program).sessions[currentSessionId].volumeList
         var i =0
@@ -69,6 +66,4 @@ class ChallengeAndPumpViewModel(context: Context): ViewModel() {
             challengePumpSavedL.postValue(true)
         }
     }
-
-
 }

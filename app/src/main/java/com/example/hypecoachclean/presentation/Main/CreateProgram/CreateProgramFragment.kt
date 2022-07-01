@@ -1,19 +1,15 @@
 package com.example.hypecoachclean.presentation.Main.CreateProgram
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.fragment.findNavController
 import com.example.hypecoachclean.Constants
 import com.example.hypecoachclean.R
-import com.example.hypecoachclean.data.POJOs.MicroCycle
+import com.example.hypecoachclean.data.BusinessLogic.MicroCycle
 import com.example.hypecoachclean.databinding.FragmentCreateProgramBinding
-import com.example.hypecoachclean.databinding.FragmentWeeklyProgramBinding
-import com.example.hypecoachclean.presentation.Main.WeeklyProgram.WeeklyProgramViewModel
 import com.example.hypecoachclean.presentation.base.BaseFragment
 
 
@@ -48,6 +44,7 @@ class CreateProgramFragment :  BaseFragment<CreateProgramViewModel, FragmentCrea
         viewModel.savedL.observe(viewLifecycleOwner, Observer {
             if(it){
                 binding.loadingViewProgressBar.visibility = View.GONE
+                findNavController().navigate(R.id.action_createProgramFragment_to_mainScreenFragment2)
             }
         })
     }
@@ -93,11 +90,9 @@ class CreateProgramFragment :  BaseFragment<CreateProgramViewModel, FragmentCrea
     }
 
     private fun generateProgram(){ //MicroCycle object will handle the program generation
-
         mMicroCycle.generateCycle()
-        mMicroCycle.sessions[0].setNext(true)
+        //mMicroCycle.sessions[0].done(true)
         mMicroCycle.printMicro()
-
     }
 
     private fun getSecondaryFocus(): String{

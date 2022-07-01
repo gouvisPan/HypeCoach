@@ -4,17 +4,13 @@ package com.example.hypecoachclean
 import android.app.Activity
 import android.content.Intent
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
-import com.example.hypecoachclean.data.POJOs.MicroCycle
-import com.example.hypecoachclean.data.POJOs.Set
-import com.example.hypecoachclean.presentation.auth.LoginFragment
+import com.example.hypecoachclean.data.BusinessLogic.MicroCycle
+import com.example.hypecoachclean.data.BusinessLogic.Set
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.squareup.okhttp.ResponseBody
-import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.math.round
 
 
 fun <A : Activity> Activity.startNewActivity(activity: Class<A>) {
@@ -51,6 +47,12 @@ fun stringToObject(program : String): MicroCycle {
 fun objectToString(microCycle: MicroCycle): String{
     var microString = Gson().toJson(microCycle)
     return  microString
+}
+
+fun Double.round(decimals: Int): Double {
+    var multiplier = 1.0
+    repeat(decimals) { multiplier *= 10 }
+    return round(this * multiplier) / multiplier
 }
 
 sealed class Resource<out T> {

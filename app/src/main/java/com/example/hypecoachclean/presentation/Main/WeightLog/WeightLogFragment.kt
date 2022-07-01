@@ -57,6 +57,8 @@ class WeightLogFragment : BaseFragment<WeightLogViewModel, FragmentWeightLogBind
     private fun observeViewModel(){
         viewModel.allCompletedDatesListL.observe(viewLifecycleOwner, Observer {
             //binding.loadingViewProgressBar.visibility = View.GONE
+            binding.rvHistory.visibility = View.VISIBLE
+            binding.tvNoDataAvailable.visibility = View.GONE
             historyAdapter.updateWeight(it)
         })
 
@@ -64,12 +66,19 @@ class WeightLogFragment : BaseFragment<WeightLogViewModel, FragmentWeightLogBind
             if(it !=null) historyAdapter.updateWeight(it)
         })
 
+        viewModel.noLogsL.observe(viewLifecycleOwner, Observer {
+            if(it){
+                binding.rvHistory.visibility = View.GONE
+                binding.tvNoDataAvailable.visibility = View.VISIBLE
+            }
+        })
+
     }
 
     fun setUpRV(){
 
         binding.rvHistory.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,true)
             adapter = historyAdapter
         }
 

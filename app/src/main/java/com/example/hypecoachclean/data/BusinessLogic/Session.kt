@@ -1,10 +1,10 @@
-package com.example.hypecoachclean.data.POJOs
+package com.example.hypecoachclean.data.BusinessLogic
 
 
 class Session(var volumeList: ArrayList<Int>,var availableExercises: ArrayList<Exercise>,var name: String,var id: Long) {
 
     var exercises = ArrayList<ExerciseInSession>()
-    private var Done = false
+    private var done = false
 
     init {
         var exerciseTmp1: ExerciseInSession
@@ -38,14 +38,14 @@ class Session(var volumeList: ArrayList<Int>,var availableExercises: ArrayList<E
             //Then continue adding sets to the primary exercise
 
             if (exercise.getExercise().getFocus() == muscle && exercise.getSets().size < 3) {
-                exercise.addSet(Set(exercise.getSetSize() + 1, 0, 0, 3))
+                exercise.addSet(Set(exercise.getSetSize() + 1, 0.0, 0, 3))
                 counter--
             }
         }
         if (counter > 0) {
             for (exercise in exercises) {
                 if (counter>0 && exercise.getExercise().getFocus() == muscle) {
-                    exercise.addSet(Set(exercise.getSetSize() + 1, 0, 0, 3))
+                    exercise.addSet(Set(exercise.getSetSize() + 1, 0.0, 0, 3))
                     counter--
                 }
             }
@@ -57,11 +57,11 @@ class Session(var volumeList: ArrayList<Int>,var availableExercises: ArrayList<E
         }
     }
     fun isDone(): Boolean{
-        return  Done
+        return  done
     }
 
-    fun setNext(b: Boolean){
-        Done = b
+    fun done(b: Boolean){
+        done = b
     }
 
     fun print() {

@@ -14,7 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -367,19 +370,23 @@
             </LinearLayout>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnGenerateMacroCycle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="@dimen/button_side_margin"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="@dimen/button_side_margin"
-            android:background="@drawable/btn_intent_bg"
-            android:text="Generate program" />
+
 
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnGenerateMacroCycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_intent_bg"
+        android:text="Generate program"
+        android:layout_marginLeft="@dimen/button_side_margin"
+        android:layout_marginRight="@dimen/button_side_margin"
+        android:layout_marginBottom="@dimen/marginButtonBottom"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
 
     <ProgressBar
         android:id="@+id/loadingViewProgressBar"

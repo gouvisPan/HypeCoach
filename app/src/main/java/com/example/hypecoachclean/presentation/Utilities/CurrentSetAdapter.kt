@@ -5,10 +5,10 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hypecoachclean.data.POJOs.Set
+import com.example.hypecoachclean.data.BusinessLogic.Set
 import com.example.hypecoachclean.databinding.CurrentSetTableRowBinding
-import com.example.hypecoachclean.databinding.SetTableRowBinding
-import com.example.hypecoachclean.presentation.PrevSetAdapter
+import com.example.hypecoachclean.round
+import kotlin.math.floor
 
 class CurrentSetAdapter(
     var sets: ArrayList<Set>,
@@ -65,7 +65,13 @@ class CurrentSetAdapter(
 
 
             tvSetNum.text = theSet.id.toString()
-            etLoadNum.hint = theSet.load.toString()
+
+            if(theSet.load == floor(theSet.load)) {
+                etLoadNum.hint = theSet.load.toInt().toString()
+            }else{
+                etLoadNum.hint = theSet.load.round(2).toString()
+            }
+
             etRepNum.hint = theSet.reps.toString()
             etRirNum.hint = theSet.rir.toString()
 
@@ -86,7 +92,7 @@ class CurrentSetAdapter(
                     before: Int, count: Int
                 ) {
                     if (s.isNotEmpty()) {
-                        theSet.load = s.toString().toInt()
+                        theSet.load = s.toString().toDouble()
                     }
                 }
             })

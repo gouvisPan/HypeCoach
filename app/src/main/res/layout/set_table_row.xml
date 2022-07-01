@@ -8,7 +8,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <TextView
             android:id="@+id/tvSetNum"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingEnd="10dp"
@@ -18,7 +18,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:paddingRight="10dp" />
         <TextView
             android:id="@+id/tvLoad"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="left"
@@ -27,7 +27,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:textSize="@dimen/main_text_size"/>
         <TextView
             android:id="@+id/tvRepNum"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/colorBlackText"
@@ -36,7 +36,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:textSize="@dimen/main_text_size"/>
         <TextView
             android:id="@+id/tvRirNum"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlackText"
             android:layout_weight="1"

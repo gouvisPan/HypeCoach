@@ -1,7 +1,4 @@
-package com.example.hypecoachclean.data.POJOs
-
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+package com.example.hypecoachclean.data.BusinessLogic
 
 data class User(
     var id:String="",

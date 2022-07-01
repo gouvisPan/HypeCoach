@@ -2,8 +2,7 @@ package com.example.hypecoachclean.repository
 
 import android.content.Context
 import android.net.Uri
-import com.example.hypecoachclean.data.POJOs.MicroCycle
-import com.example.hypecoachclean.data.POJOs.User
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.example.hypecoachclean.data.RoomUserDataSource
 import com.example.hypecoachclean.network.FirebaseSource
 import com.google.firebase.auth.FirebaseAuth
@@ -30,6 +29,10 @@ class UserRepository(context: Context): BaseRepository(){
 
     suspend fun delete(user: User){
         dataSource.delete(user)
+    }
+
+    suspend fun deleteAll() {
+        dataSource.deleteAll()
     }
 
     suspend fun getUser():User{

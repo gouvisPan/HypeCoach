@@ -4,10 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hypecoachclean.Constants
-import com.example.hypecoachclean.data.POJOs.Set
 import com.example.hypecoachclean.databinding.ChallengePumpInputRowBinding
-import com.example.hypecoachclean.databinding.SetTableRowBinding
 
 class MuscleAdapter(
     var muscleGroups: ArrayList<String>

@@ -1,28 +1,27 @@
 package com.example.hypecoachclean.presentation.Main
 
-import android.app.Application
 import android.content.Context
-import android.provider.ContactsContract
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.hypecoachclean.MainApplication.Companion.applicationContext
-import com.example.hypecoachclean.data.POJOs.User
-import com.example.hypecoachclean.data.db.UserDatabase
-import com.example.hypecoachclean.repository.AuthRepository
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.example.hypecoachclean.repository.UserRepository
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel(context: Context): ViewModel() {
 
-    private var  userRepository= UserRepository(context)
-
+    private var  userRepository = UserRepository(context)
+    private lateinit var  mUser: User
+    //LiveData Vars
     val user = MutableLiveData<User>()
     val dataLoaded = MutableLiveData(false)
     val logoutL = MutableLiveData(false)
+
+        //Unregistered Info Vars
+    val hasWeightLogged = MutableLiveData(true)
+    val isMicroGenerated = MutableLiveData(true)
+
 
     fun loadUserData(){
         viewModelScope.launch(Dispatchers.IO) {
@@ -33,8 +32,22 @@ class MainViewModel(context: Context): ViewModel() {
 
     fun getUser(){
         viewModelScope.launch(Dispatchers.IO){
-            val mUser = userRepository.getUser()
+            mUser = userRepository.getUser()
+            checkUnregisteredInfo()
             user.postValue(mUser)
+        }
+    }
+    private fun checkUnregisteredInfo(){
+        if(mUser.log.isEmpty()){
+            hasWeightLogged.postValue(false)
+        }else{
+            hasWeightLogged.postValue(true)
+        }
+
+        if(mUser.program.isNullOrEmpty()){
+            isMicroGenerated.postValue(false)
+        }else{
+            isMicroGenerated.postValue(true)
         }
     }
 

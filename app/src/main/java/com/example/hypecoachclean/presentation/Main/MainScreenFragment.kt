@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.hypecoachclean.R
 import com.example.hypecoachclean.databinding.FragmentMainScreenBinding
 import com.example.hypecoachclean.databinding.NavigationHeaderBinding
+import com.example.hypecoachclean.enable
 import com.example.hypecoachclean.presentation.auth.AuthActivity
 import com.example.hypecoachclean.presentation.base.BaseFragment
 import com.example.hypecoachclean.startNewActivity
@@ -20,22 +21,19 @@ import com.example.hypecoachclean.startNewActivity
 
 class MainScreenFragment() :  BaseFragment<MainViewModel, FragmentMainScreenBinding>() {
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
         val viewHeader = binding.navigationView.getHeaderView(0)
         val navViewHeaderBinding : NavigationHeaderBinding = NavigationHeaderBinding.bind(viewHeader)
         val typeFace: Typeface = Typeface.createFromAsset(activity!!.assets,"fonts/BlackOpsOne-Regular.ttf")
-
+        binding.btnWorkouts.enable(false)
         binding.tvMainLogo.typeface = typeFace
         viewModel.loadUserData()
 
         setNavMenuActions()
         btnWeeklyProgramOnPress()
         btnCreateProgramOnPress()
-
-
         observeViewModel(navViewHeaderBinding)
     }
     private fun setNavMenuActions(){
@@ -49,10 +47,23 @@ class MainScreenFragment() :  BaseFragment<MainViewModel, FragmentMainScreenBind
                     findNavController().navigate(R.id.action_mainScreenFragment_to_weightLogFragment)
                 }
                 R.id.nav_menu_disruption -> {
-                    findNavController().navigate(R.id.action_mainScreenFragment_to_disruptionInputFragment)
+                    viewModel.isMicroGenerated.observe(viewLifecycleOwner,Observer{i->
+                        if(i){
+                            findNavController().navigate(R.id.action_mainScreenFragment_to_disruptionInputFragment)
+                        }else{
+                            Toast.makeText(requireContext(), "You need to create a program first!", Toast.LENGTH_SHORT).show()
+                        }
+                    })
                 }
                 R.id.nav_menu_my_Macros -> {
-                    findNavController().navigate(R.id.action_mainScreenFragment_to_macrosFragment)
+                    viewModel.hasWeightLogged.observe(viewLifecycleOwner,Observer{i->
+                        if(i){
+                            findNavController().navigate(R.id.action_mainScreenFragment_to_macrosFragment)
+                        }else{
+                            Toast.makeText(requireContext(), "You need to log weight data first", Toast.LENGTH_SHORT).show()
+                        }
+                    })
+
                 }
                 R.id.nav_menu_sign_out-> {
                     viewModel.logout()
@@ -74,9 +85,9 @@ class MainScreenFragment() :  BaseFragment<MainViewModel, FragmentMainScreenBind
 
         viewModel.user.observe(viewLifecycleOwner, Observer {user->
 
-
+            binding.btnWorkouts.enable(true)
             binding.loadingViewProgressBar.visibility= View.GONE
-            binding.tvAdherencePoints.text = user.adherence.toString() +"/100"
+            binding.tvAdherencePoints.text ="Adherence points: " + user.adherence.toString() +"/100"
             navViewHeaderBinding.drawerUserName.text = user.name
 
             Glide.with(this)
@@ -98,7 +109,14 @@ class MainScreenFragment() :  BaseFragment<MainViewModel, FragmentMainScreenBind
 
     private fun btnWeeklyProgramOnPress(){
         binding.btnWorkouts.setOnClickListener {
-            findNavController().navigate(R.id.action_mainScreenFragment_to_weeklyProgramFragment)
+            viewModel.isMicroGenerated.observe(viewLifecycleOwner,Observer{
+                if(it){
+                    findNavController().navigate(R.id.action_mainScreenFragment_to_weeklyProgramFragment)
+                }else{
+                    Toast.makeText(requireContext(), "You need to create a program first!", Toast.LENGTH_SHORT).show()
+                }
+            })
+
         }
 
     }

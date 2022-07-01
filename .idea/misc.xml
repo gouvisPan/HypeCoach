@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/drawable/next_session.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/drawable/not_this_session_bg.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/activity_main.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/challenge_pump_input_row.xml" value="0.22" />
         <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/current_set_table_row.xml" value="0.276268115942029" />
         <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/disruption_input_row.xml" value="0.28940217391304346" />
@@ -20,6 +23,7 @@
         <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/item_weight_row.xml" value="0.276268115942029" />
         <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/main_content.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/navigation_header.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dai17/Desktop/Android/HypeCoachCLEAN/app/src/main/res/layout/set_table_row.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/drawable/button_sub_round_corners.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/drawable/ic_actio_add_30secs.xml" value="0.1" />
         <entry key="..\:/Users/dai17/HypeCoachCLEAN/app/src/main/res/layout/activity_auth.xml" value="0.2328125" />

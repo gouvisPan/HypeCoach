@@ -124,9 +124,10 @@
             android:id="@+id/btn_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white_color"
             android:layout_marginBottom="20dp"
             android:background="@drawable/btn_intent_bg"
             android:text="Update" />

@@ -6,9 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hypecoachclean.Constants
-import com.example.hypecoachclean.data.POJOs.ExerciseInSession
-import com.example.hypecoachclean.data.POJOs.MicroCycle
-import com.example.hypecoachclean.data.POJOs.Set
+import com.example.hypecoachclean.data.BusinessLogic.ExerciseInSession
+import com.example.hypecoachclean.data.BusinessLogic.MicroCycle
+import com.example.hypecoachclean.data.BusinessLogic.Set
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.example.hypecoachclean.objectToString
 import com.example.hypecoachclean.repository.UserRepository
 import com.example.hypecoachclean.stringToObject
@@ -20,12 +21,14 @@ class WorkingOutViewModel(context: Context): ViewModel() {
     private var  userRepository= UserRepository(context)
 
     lateinit var  microCycle : MicroCycle
+    lateinit var user : User
 
     //Timer Vars
     private lateinit var exTimer: CountDownTimer
     private var restTimeout : Long = 60
     private var timerTime = 0
     val timeCount = MutableLiveData<Int>()
+    private var isTimerRunning = false
 
     //WorkingOutFragment LiveDataVars
     val microL = MutableLiveData<MicroCycle>()
@@ -34,12 +37,6 @@ class WorkingOutViewModel(context: Context): ViewModel() {
     val positionL = MutableLiveData<Int>()
     val lastExerciseL = MutableLiveData(false)
     val workoutSavedL = MutableLiveData(false)
-
-
-
-
-
-
 
     private lateinit var historyExercises :ArrayList<ExerciseInSession>
     private lateinit var currentExercises :ArrayList<ExerciseInSession>
@@ -50,9 +47,11 @@ class WorkingOutViewModel(context: Context): ViewModel() {
     fun getExercise(theSession: Int){
         sessionNum = theSession
         viewModelScope.launch(Dispatchers.IO){
-            val program = getProgram()
-            historyExercises= stringToObject(program).sessions[theSession].exercises
-            currentExercises= stringToObject(program).sessions[theSession].exercises
+            user = userRepository.getUser()
+
+            microCycle = stringToObject(user.program)
+            historyExercises= stringToObject(user.program).sessions[theSession].exercises
+            currentExercises= stringToObject(user.program).sessions[theSession].exercises
 
             for(exercise in currentExercises){
                 exercise.getProposedSets()
@@ -65,6 +64,9 @@ class WorkingOutViewModel(context: Context): ViewModel() {
     }
 
     fun nextExercise(sets: ArrayList<Set>){
+        if(isTimerRunning){
+            stopTimer()
+        }
 
         if(exerciseNum == currentExercises.size - 2){
             lastExerciseL.postValue(true)
@@ -72,10 +74,11 @@ class WorkingOutViewModel(context: Context): ViewModel() {
 
         if(exerciseNum == currentExercises.size - 1){
             currentExercises[exerciseNum].setSets(sets)
+            microCycle.sessions[sessionNum].exercises = currentExercises
+            repaintWeeklyList()
+            manageAdherance()
             saveWorkout()
-
         }else{
-
             currentExercises[exerciseNum].setSets(sets)
             exerciseNum++
 
@@ -83,14 +86,15 @@ class WorkingOutViewModel(context: Context): ViewModel() {
             cExerciseL.postValue(currentExercises[exerciseNum])
             positionL.postValue(exerciseNum)
         }
-
     }
 
     fun prevExercise(){
+        if(isTimerRunning){
+            stopTimer()
+        }
         if(exerciseNum == currentExercises.size - 1) {
             lastExerciseL.postValue(false)
         }
-
         exerciseNum--
 
         hExerciseL.postValue(historyExercises[exerciseNum])
@@ -100,30 +104,24 @@ class WorkingOutViewModel(context: Context): ViewModel() {
 
     private fun saveWorkout(){
         viewModelScope.launch(Dispatchers.IO) {
-            val user = userRepository.getUser()
-            val micro = stringToObject(user.program)
             val myHashMap = HashMap<String,Any>()
 
-            micro.sessions[sessionNum].exercises = currentExercises
-            user.program = objectToString(micro)
+            user.program = objectToString(microCycle)
 
+            userRepository.deleteAll()
             userRepository.addUser(user)
 
             myHashMap[Constants.PROGRAM] =  user.program
+            myHashMap[Constants.ADHERENCE] = user.adherence
             userRepository.updateRemote(myHashMap)
 
             workoutSavedL.postValue(true)
         }
     }
 
-    private suspend fun getProgram(): String {
-        return userRepository.getUser().program
-    }
-
-
     fun startTimer() {
         timerTime =historyExercises[exerciseNum].getExercise().getRest()
-
+        isTimerRunning = true
         exTimer = object : CountDownTimer(restTimeout*1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 timerTime--
@@ -137,6 +135,7 @@ class WorkingOutViewModel(context: Context): ViewModel() {
     }
 
     fun stopTimer(){
+        isTimerRunning = false
         exTimer.cancel()
         timerTime =historyExercises[exerciseNum].getExercise().getRest()
         timeCount.postValue(timerTime)
@@ -145,6 +144,37 @@ class WorkingOutViewModel(context: Context): ViewModel() {
         timerTime += 30
     }
 
+    private fun manageAdherance(){
+        if(sessionNum == 0){
+            user.adherence = 20
+        }else {
+            user.adherence = user.adherence + 20
+        }
+    }
 
+    private fun repaintWeeklyList(){
+        microCycle.sessions[sessionNum].done(true)
 
+        if(sessionNum == microCycle.sessions.size - 1){
+            for(i in microCycle.sessions) {
+                i.done(false)
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import com.example.hypecoachclean.Constants
 import com.example.hypecoachclean.R
 import com.example.hypecoachclean.databinding.FragmentMacrosBinding
+import com.example.hypecoachclean.enable
 import com.example.hypecoachclean.presentation.Main.WorkingOut.WorkingOutFragmentArgs
 import com.example.hypecoachclean.presentation.base.BaseFragment
 
@@ -30,20 +31,33 @@ class MacrosFragment : BaseFragment<MacrosViewModel,FragmentMacrosBinding>() {
 
         viewModel.macrosL.observe(viewLifecycleOwner,Observer{
 
-            binding.tvProteinValue.text = it[Constants.PROTEIN_POSITION].toString()
-            binding.tvCarbValue.text = it[Constants.CARBS_POSITION].toString()
-            binding.tvFatsValue.text = it[Constants.FATS_POSITION].toString()
-            binding.tvGoalCalories.text=it[Constants.GOAL_POSITION].toString()
-            binding.tvMaintenanceCalories.text = it[Constants.MAINT_POSITION].toString()
-
+            if(it.isNullOrEmpty()){
+                binding.tvProteinValue.text = " "
+                binding.tvCarbValue.text = " "
+                binding.tvFatsValue.text = " "
+                binding.tvGoalCalories.text = " "
+                binding.tvMaintenanceCalories.text = " "
+            }else {
+                binding.tvProteinValue.text = it[Constants.PROTEIN_POSITION].toString()
+                binding.tvCarbValue.text = it[Constants.CARBS_POSITION].toString()
+                binding.tvFatsValue.text = it[Constants.FATS_POSITION].toString()
+                binding.tvGoalCalories.text = it[Constants.GOAL_POSITION].toString()
+                binding.tvMaintenanceCalories.text = it[Constants.MAINT_POSITION].toString()
+            }
         })
 
-        /*viewModel.userL.observe(viewLifecycleOwner,Observer{
-            viewModel.calculateMacros()
-        })*/
+        viewModel.isDataSufficient.observe(viewLifecycleOwner,Observer{
+            if(!it){
+                binding.btnUpdateMacros.enable(false)
+                Toast.makeText(
+                    requireContext(),
+                    "Please fill your profile information!",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
 
         viewModel.adherenceL.observe(viewLifecycleOwner,Observer{
-
             if(!it){
                 binding.btnUpdateMacros.setBackgroundColor(resources.getColor(R.color.colorGreyDark))
                 binding.btnUpdateMacros.isEnabled = false
@@ -52,7 +66,6 @@ class MacrosFragment : BaseFragment<MacrosViewModel,FragmentMacrosBinding>() {
         })
 
         viewModel.isWeightLogSufficientL.observe(viewLifecycleOwner,Observer{
-
             if(!it){
                 Toast.makeText(
                     requireContext(),

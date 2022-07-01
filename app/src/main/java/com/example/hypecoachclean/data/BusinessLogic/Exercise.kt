@@ -1,6 +1,6 @@
-package com.example.hypecoachclean.data.POJOs
+package com.example.hypecoachclean.data.BusinessLogic
 
-
+//TODO Change privates
 data class Exercise (
     private var id: Int,
     private var name: String,
@@ -13,8 +13,6 @@ data class Exercise (
     private var movementType: String,
     private var included: Boolean
 ){
-
-
 
     fun print(){
         print("$name  ")

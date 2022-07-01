@@ -1,14 +1,13 @@
 package com.example.hypecoachclean.presentation
 
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hypecoachclean.data.POJOs.Session
 
-import com.example.hypecoachclean.data.POJOs.Set
+import com.example.hypecoachclean.data.BusinessLogic.Set
 import com.example.hypecoachclean.databinding.SetTableRowBinding
+import com.example.hypecoachclean.round
+import kotlin.math.floor
 
 
 class PrevSetAdapter(
@@ -55,7 +54,12 @@ class PrevSetAdapter(
         fun bind(theSet: Set){
 
            tvSetNum.text = theSet.id.toString()
-           tvLoadNum.text = theSet.load.toString()
+
+            if(theSet.load == floor(theSet.load)) {
+                tvLoadNum.text = theSet.load.toInt().toString()
+            }else{
+                tvLoadNum.text = theSet.load.round(2).toString()
+            }
            tvRepNum.text = theSet.reps.toString()
             tvRirNum.text = theSet.rir.toString()
         }

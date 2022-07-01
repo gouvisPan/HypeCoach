@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/tvSetNumCurr"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="@color/colorBlackText"
@@ -16,7 +16,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         style="Widget.AppCompat.EditText"
         android:id="@+id/etLoad"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="left"
@@ -26,7 +26,7 @@
         android:textSize="@dimen/main_text_size"/>
     <EditText
         android:id="@+id/etRepNum"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="@color/colorBlackText"
@@ -35,7 +35,7 @@
         android:textSize="@dimen/main_text_size"/>
     <EditText
         android:id="@+id/etRirNum"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlackText"
         android:layout_weight="1"

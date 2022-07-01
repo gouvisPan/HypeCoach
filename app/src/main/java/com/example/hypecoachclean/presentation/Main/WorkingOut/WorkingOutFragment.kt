@@ -1,17 +1,14 @@
 package com.example.hypecoachclean.presentation.Main.WorkingOut
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hypecoachclean.R
-import com.example.hypecoachclean.data.POJOs.Set
+import com.example.hypecoachclean.data.BusinessLogic.Set
 import com.example.hypecoachclean.databinding.FragmentWorkingOutBinding
 import com.example.hypecoachclean.presentation.PrevSetAdapter
 import com.example.hypecoachclean.presentation.Utilities.CurrentSetAdapter

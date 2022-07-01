@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hypecoachclean.Constants
-import com.example.hypecoachclean.data.POJOs.MicroCycle
-import com.example.hypecoachclean.data.POJOs.User
+import com.example.hypecoachclean.data.BusinessLogic.MicroCycle
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.example.hypecoachclean.objectToString
 import com.example.hypecoachclean.repository.UserRepository
 import com.example.hypecoachclean.stringToObject
@@ -27,9 +27,9 @@ class DisruptionInputViewModel(context: Context): ViewModel() {
             user = userRepository.getUser()
             microCycle = stringToObject(user.program)
             muscleGroupsL.postValue(microCycle.volumeAdjustment)
-            println("initial array: ${microCycle.volumeAdjustment} ")
         }
     }
+
     fun updateVolume(volumeArray: ArrayList<Int>){
         microCycle.volumeAdjustment = volumeArray
         microCycle.reAdjustVolumeForNextWeek()
@@ -46,7 +46,6 @@ class DisruptionInputViewModel(context: Context): ViewModel() {
             userRepository.addUser(user)
 
             savedL.postValue(true)
-
         }
     }
 }

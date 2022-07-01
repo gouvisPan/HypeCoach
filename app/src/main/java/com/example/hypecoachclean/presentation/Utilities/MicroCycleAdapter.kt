@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hypecoachclean.R
-import com.example.hypecoachclean.data.POJOs.Session
+import com.example.hypecoachclean.data.BusinessLogic.Session
 import com.example.hypecoachclean.databinding.SessionTableRowBinding
 import com.example.hypecoachclean.presentation.Utilities.ListAction
 
@@ -53,9 +53,9 @@ class MicroCycleAdapter (
             tvSessionName.text = session.name
 
             if(session.isDone()){
-                cvSessionTableRow.setBackgroundResource(R.drawable.next_session)
-            }else {
                 cvSessionTableRow.setBackgroundResource(R.drawable.not_this_session_bg)
+            }else {
+                cvSessionTableRow.setBackgroundResource(R.drawable.next_session)
             }
             layout.setOnClickListener { actions.onClick(position) }
         }

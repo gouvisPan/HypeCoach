@@ -7,8 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hypecoachclean.Constants
-import com.example.hypecoachclean.data.POJOs.MicroCycle
-import com.example.hypecoachclean.data.POJOs.User
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.example.hypecoachclean.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,15 +27,10 @@ class ProfileViewModel(context: Context): ViewModel() {
     }
 
     fun updateIfNecessary(name: String,height: String,age: String,gender: String,imageURI: Uri?){
-
-
         val myUser = user.value
         var areChangesMade = false
 
-
-        if (imageURI != null) {
-            uploadImage(getName(imageURI),imageURI)
-        }
+        if (imageURI != null) uploadImage(getName(imageURI),imageURI)
 
         if(name != myUser!!.name){
             myUser.name = name
@@ -54,12 +48,9 @@ class ProfileViewModel(context: Context): ViewModel() {
             myUser.genderString = gender
             areChangesMade = true
         }
-
-
-        if(areChangesMade){
-            updateUser(myUser)
-        }
+        if(areChangesMade) updateUser(myUser)
     }
+
     fun uploadImage(
          name: String,
          uri: Uri
@@ -67,9 +58,7 @@ class ProfileViewModel(context: Context): ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
            url.postValue( userRepository.uploadImage(name, uri))
         }
-
     }
-
 
     fun updateUser(user: User){
         viewModelScope.launch(Dispatchers.IO){
@@ -82,11 +71,10 @@ class ProfileViewModel(context: Context): ViewModel() {
             myHashMap[Constants.GENDERSTRING] = user.genderString
             myHashMap[Constants.IMAGE] = user.image
             userRepository.updateRemote(myHashMap)
-
-
             savedL.postValue(true)
         }
     }
+
     private fun getName(uri: Uri): String{
         return "USER_IMAGE" + System.currentTimeMillis() + "." + getFileExtension(theContext,uri)
     }
@@ -95,6 +83,4 @@ class ProfileViewModel(context: Context): ViewModel() {
         return MimeTypeMap.getSingleton()
             .getExtensionFromMimeType(context.contentResolver.getType(uri!!))
     }
-
-
 }

@@ -50,25 +50,4 @@ class AuthViewModel() : ViewModel() {
             _autoLoginResponse.value = authRepository.autoLogin()
         }
     }
-
-
-
-    private fun areCredsValid(name: String , email: String, password: String): Boolean{
-
-        return when{
-            TextUtils.isEmpty(name) ->{
-                //showErrorSnackBar("Name is missing")
-                return false
-            }
-            TextUtils.isEmpty(email) ->{
-                //showErrorSnackBar("Email is missing")
-                return false
-            }
-            TextUtils.isEmpty(password) ->{
-               // showErrorSnackBar("Password is missing")
-                return false
-            }else -> { return true }
-
-        }
-    }
 }

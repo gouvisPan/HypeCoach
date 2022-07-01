@@ -2,9 +2,7 @@ package com.example.hypecoachclean.repository
 
 
 import com.example.hypecoachclean.Resource
-import com.example.hypecoachclean.data.POJOs.User
 import com.example.hypecoachclean.network.FirebaseSource
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

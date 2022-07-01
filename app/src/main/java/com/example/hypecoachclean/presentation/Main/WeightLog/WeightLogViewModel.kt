@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hypecoachclean.Constants
-import com.example.hypecoachclean.data.POJOs.Weight
+import com.example.hypecoachclean.data.BusinessLogic.Weight
 import com.example.hypecoachclean.repository.UserRepository
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
@@ -15,51 +15,59 @@ import java.util.HashMap
 import kotlin.collections.ArrayList
 
 class WeightLogViewModel(context: Context): ViewModel() {
-    private var  userRepository= UserRepository(context)
-    var allCompletedDatesListL = MutableLiveData <ArrayList<Weight>>()
+        private var  userRepository= UserRepository(context)
 
-    var myWeights = ArrayList<Weight>()
-    var weightChangesL = MutableLiveData <ArrayList<Weight>>()
+        var allCompletedDatesListL = MutableLiveData <ArrayList<Weight>>()
+        var noLogsL = MutableLiveData(false)
 
+        var myWeights = ArrayList<Weight>()
+        var weightChangesL = MutableLiveData <ArrayList<Weight>>()
 
-    fun getWeightLog(){
-        viewModelScope.launch(Dispatchers.IO){
-            val mUser = userRepository.getUser()
-            val turnsType = object : TypeToken<ArrayList<Weight>>() {}.type
-            val myWeightArray = Gson().fromJson<ArrayList<Weight>>(mUser.log,turnsType)
-            myWeights = myWeightArray
-            allCompletedDatesListL.postValue(myWeightArray)
-        }
-    }
-
-    fun deleteWeight(position: Int){
-        myWeights.removeAt(position)
-        saveWeightLogChanges()
-    }
-
-    fun addWeight(date: String, value: String){
-        val weight = isDateLogged(date)  //checking if the date is already in the array
-
-        if (weight == null) {
-            var index=myWeights.size+1
-
-            //Custom input shorting based on date
-            for((j,i) in myWeights.withIndex()) {
-                if(getYear(i.date) <= getYear(date))
-                    if(getMonth(i.date) <= getMonth(date))
-                        if(getDay(i.date) < getDay(date))
-                            index=j+1
+        fun getWeightLog(){
+            viewModelScope.launch(Dispatchers.IO){
+                val mUser = userRepository.getUser()
+                val turnsType = object : TypeToken<ArrayList<Weight>>() {}.type
+                val myWeightArray = Gson().fromJson<ArrayList<Weight>>(mUser.log,turnsType)
+                if(myWeightArray.isNullOrEmpty()) {
+                    noLogsL.postValue(true)
+                }else {
+                    myWeights = myWeightArray
+                    allCompletedDatesListL.postValue(myWeightArray)
+                }
             }
-            myWeights.add(index,Weight(0, date, value.toDouble()))
-
-        } else {
-            weight.value=value.toDouble()
-
         }
 
-        saveWeightLogChanges()
+        fun deleteWeight(position: Int){
+            myWeights.removeAt(position)
+            saveWeightLogChanges()
+        }
 
-    }
+        fun addWeight(date: String, value: String){
+            val weight = isDateLogged(date)  //checking if the date is already in the array
+
+            if (weight == null) {
+                var index=myWeights.size+1
+
+                //Custom input shorting based on date
+                for((j,i) in myWeights.withIndex()) {
+                    if(getYear(i.date) <= getYear(date))
+                        if(getMonth(i.date) <= getMonth(date))
+                            if(getDay(i.date) < getDay(date))
+                                index=j+1
+                }
+                if( index==myWeights.size+1) {
+                    myWeights.add(Weight(0, date, value.toDouble()))
+                }else{
+                    myWeights.add(index, Weight(0, date, value.toDouble()))
+                }
+
+            } else {
+                weight.value=value.toDouble()
+            }
+            allCompletedDatesListL.value = myWeights
+            saveWeightLogChanges()
+
+        }
 
     private  fun saveWeightLogChanges(){
         viewModelScope.launch(Dispatchers.IO) {
@@ -91,7 +99,6 @@ class WeightLogViewModel(context: Context): ViewModel() {
     }
 
     private fun getDay(date: String):Int{
-
         return if(date[1]=='/') {
             println(date[0].toString())
             date[0].toString().toInt()

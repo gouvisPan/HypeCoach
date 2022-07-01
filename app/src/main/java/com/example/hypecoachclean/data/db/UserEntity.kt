@@ -3,8 +3,7 @@ package com.example.hypecoachclean.data.db
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
-import com.example.hypecoachclean.data.POJOs.User
-import com.example.hypecoachclean.data.POJOs.Weight
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

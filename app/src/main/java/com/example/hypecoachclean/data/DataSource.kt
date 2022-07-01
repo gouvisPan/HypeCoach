@@ -1,4 +1,6 @@
-package com.example.hypecoachclean.data.POJOs
+package com.example.hypecoachclean.data
+
+import com.example.hypecoachclean.data.BusinessLogic.User
 
 interface DataSource {
 

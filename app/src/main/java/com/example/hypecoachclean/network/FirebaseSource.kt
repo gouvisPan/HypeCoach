@@ -3,7 +3,7 @@ package com.example.hypecoachclean.network
 import android.net.Uri
 import android.util.Log
 import com.example.hypecoachclean.Constants
-import com.example.hypecoachclean.data.POJOs.User
+import com.example.hypecoachclean.data.BusinessLogic.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,13 +14,10 @@ import kotlinx.coroutines.tasks.await
 
 class FirebaseSource {
 
+    private val myFireStore = FirebaseFirestore.getInstance()
     private val firebaseAuth: FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
-
     }
-
-    private val myFireStore = FirebaseFirestore.getInstance()
-
 
     suspend fun login(email: String, password: String) : FirebaseUser? {
 
@@ -114,7 +111,7 @@ class FirebaseSource {
             sRef.putFile(uri).await()
             Log.w("User Image Update", "UserImageUpdate:Success")
             imgUrl= sRef.downloadUrl.toString()
-
+            println("The image URL: " + imgUrl)
 
         }catch (e: Exception) {
             Log.w("User Image Update", "UserImageUpdate:failure")
@@ -127,10 +124,6 @@ class FirebaseSource {
         return getCurrentUserId().isNotEmpty()
     }
 
-
-
-    fun currentUser() = firebaseAuth.currentUser
-
     private fun getCurrentUserId(): String {
 
         val currentUser = firebaseAuth.currentUser
@@ -140,7 +133,5 @@ class FirebaseSource {
         }
         return currentUserID
     }
-
-
 
 }

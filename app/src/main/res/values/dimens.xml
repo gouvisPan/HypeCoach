@@ -46,7 +46,7 @@
     <dimen name="big_text_size">24dp</dimen>
     <dimen name="main_margin_start_end">20dp</dimen>
     <dimen name="main_margin_between_macros">26dp</dimen>
-    <dimen name="logo_text_size">26dp</dimen>
+    <dimen name="logo_text_size">32dp</dimen>
     <dimen name="margin_macro_icon_info">15dp</dimen>
     <dimen name="hint_text_size">14dp</dimen>
     <dimen name="marginButtonBottom">50dp</dimen>
