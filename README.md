@@ -1,4 +1,4 @@
-# HypeCoach - A Hypertrophy dedicated coaching App
+# HypeCoach - A Hypertrophy dedicated coaching App (Android)
 
 ![Screenshot_1645084635 (1)](https://user-images.githubusercontent.com/97959624/192753320-ba89b0c8-aa5d-4d20-bb92-bac90cf312f3.jpg)
 ![Screenshot_1645084650](https://user-images.githubusercontent.com/97959624/192753318-12775ad3-e140-49a2-98c0-40c611ee3e5d.jpg)
