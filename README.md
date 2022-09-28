@@ -7,7 +7,7 @@
 ## Description 
 
 Hypecoach is an Android application that I developed as my Thesis in the context of my Computer Science Bachelor's degree. 
-The app provides a plethora of functionalities that are backed up by science based evidence (regarding to the excercise programm and the diet guide).
+The app provides a plethora of functionalities that are backed up by science based evidence (regarding to the excercise programming and the diet guidance). This project is the second version of the Application that was build using Google's Architecture proposals (MVVM, Cloud + Local Storage).
 
 
 
