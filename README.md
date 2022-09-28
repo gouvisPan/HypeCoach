@@ -24,7 +24,7 @@ The app provides a plethora of functionalities that are backed up by science bas
 
 
 
-## About the Modeling and Architectural Design (Greater Detail in the appended doc -in Greek-)
+## About the Modeling and Architectural Design (Greater Detail on demand -I can provide my Thesis in Greek-)
 - Competitive analysis on the current market
 - System Requirments identification 
 - Use Case Diagram creation
@@ -45,8 +45,6 @@ The app provides a plethora of functionalities that are backed up by science bas
 ## More Screenshots
 
 ![NavGraphAuth](https://user-images.githubusercontent.com/97959624/192751962-9a97605d-fcd7-4c47-b359-9c37de4612af.png)
-
 ![NavGraphMain](https://user-images.githubusercontent.com/97959624/192751964-97c45b46-0e05-4edb-a623-85b22493e608.png)
-rcontent.com/97959624/192750930-078f0582-87f2-49af-90d6-9d7c267c61c7.png)
 
 
