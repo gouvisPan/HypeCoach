@@ -40,7 +40,7 @@ The app provides a plethora of functionalities that are backed up by science bas
 - Firebase for User Authentication and Cloud Storage
 - Room for Local Storage
 - Navigation Component in conjuction with fragments (and 2 Activities) for UI management
-- Coroutins for ASYNC call management
+- Coroutines for ASYNC call management
 
 ## More Screenshots
 
