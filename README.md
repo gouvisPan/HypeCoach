@@ -23,6 +23,13 @@ The app provides a plethora of functionalities that are backed up by science bas
 - Gamification mechanism that aims to increase users consistency (diet updates provided only upon the completion of all weekly workouts)
 
 
+## Technologies and Tools used
+- MVVM pattern 
+- Firebase for User Authentication and Cloud Storage
+- Room for Local Storage
+- Navigation Component in conjuction with fragments (and 2 Activities) for UI management
+- Coroutines for ASYNC call management
+
 
 ## About the Modeling and Architectural Design (Greater Detail on demand -I can provide my Thesis in Greek-)
 - Competitive analysis on the current market
@@ -33,14 +40,6 @@ The app provides a plethora of functionalities that are backed up by science bas
 - Final Class Diagram creation
 - Applying the MVVM pattern and Google's proposed Architecture
 
-
-
-## Technologies and Tools used
-- MVVM pattern 
-- Firebase for User Authentication and Cloud Storage
-- Room for Local Storage
-- Navigation Component in conjuction with fragments (and 2 Activities) for UI management
-- Coroutines for ASYNC call management
 
 ## More Screenshots
 
